@@ -1,0 +1,82 @@
+body{
+    display: flex;
+    justify-content: center;
+    height:100vw;
+    background-color: rgb(152,107,65);
+    color: rgb(86,52,42);
+    font-family: Arial,sans-serif;
+    margin:0;
+    padding:0;
+}
+
+.app-class{
+    color:rgb(215,186,137)
+;   background-color: rgb(86,52,42);
+    border-radius: 40px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 400px;
+    height:844px;
+    text-align: center;
+}
+
+
+.drink-card{
+    position:relative;
+    color: rgb(86,52,42);
+    width: 360px;
+    border: rgb(182,142,101) 2px solid;
+    border-radius: 2%;
+    margin:10px auto;
+    text-align: center;
+    background-color: rgb(215,186,137);
+}
+.drink-card .img-container{
+    width:75%;
+    margin:10px auto;
+    border:  rgb(86,52,42) 2px solid;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
+.img-drink{
+    width:100%;
+}
+
+
+.img-icon{
+    fill: rgb(86,52,42);
+    width:30px;
+    position: absolute;
+    right:0px;
+    top:5px;
+}
+
+ .popup{
+    position: absolute;
+    background-color: rgb(215,186,137);
+    border: rgb(86,52,42) 3px solid;
+    border-radius: 5px;
+    width: 80%;
+    height:80%;
+    top:40px;
+    right: 10px;
+    margin:0 10px;
+    padding: 10px;
+    text-align: left;
+ }
+ .ingredients-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+
+ }
+
+ .mix-container{
+    width: 100%;
+    margin: 5px 1px;  
+
+ }
+
+
