@@ -1,14 +1,13 @@
 import React from 'react'
 
-const RecipePopUp = ({ drinks, setRecipePopUp }) => {
+const RecipePopUp = ({ drinks, setRecipePopUp}) => {
 
     const i = 1;
 
     return (
         <>
             <div className='popup'>
-                {console.log("made it to popup comp", drinks)}
-                <div onClick={() => setRecipePopUp(false)}><strong>X</strong></div>
+                <div onClick={(e) =>  drinks.idDrink == "11007" ? setRecipePopUp(false) : console.log("NO")}><strong>X</strong></div>
                 <div className='ingredients-container'>
                     <div className='mix-container'>
                         <h4>Ingredients:</h4>
