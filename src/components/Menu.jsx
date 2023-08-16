@@ -1,8 +1,16 @@
 import React from 'react'
+import DrinkCard from './DrinkCard'
 
-const Menu = () => {
+const Menu = ({drink}) => {
   return (
-    <div>Menu</div>
+    <>
+        <div className="menu-view">
+              {drink.drinks?.map(drink =>
+                <DrinkCard
+                  drinks={drink}
+                />)}
+        </div>
+    </>
   )
 }
 

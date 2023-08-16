@@ -2,58 +2,94 @@ body{
     display: flex;
     justify-content: center;
     height:100vw;
-    background-color: rgb(152,107,65);
+    background-color: black;
     color: rgb(86,52,42);
     font-family: Arial,sans-serif;
     margin:0;
     padding:0;
+    overflow: hidden;
 }
 
 .app-class{
-    color:rgb(215,186,137)
-;   background-color: rgb(86,52,42);
-    border-radius: 40px;
-    overflow: hidden;
-    overflow-y: scroll;
-    width: 400px;
-    height:844px;
+    color:rgb(215,186,137);
     text-align: center;
+    width: 100vw;
+    margin-top:0;
+}
+
+.background{
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 100vh;
+    z-index: -100;
 }
 
 
+.menu-view::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+/* .top-test{
+    margin: 10px;
+} */
+
+.menu-view{
+    display: flex;
+    /* background-color: rgb(152,107,65); */
+    overflow: hidden;
+    overflow-y: scroll;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 80vh;
+    min-width: 400px;
+    flex-wrap: wrap;
+}
+
 .drink-card{
     position:relative;
-    color: rgb(86,52,42);
-    width: 360px;
+    color: rgb(215,186,137);
+    width:360px;
+    background-color:  rgb(86,52,42);
     border: rgb(182,142,101) 2px solid;
     border-radius: 2%;
-    margin:10px auto;
+    margin:10px 10px;
     text-align: center;
-    background-color: rgb(215,186,137);
 }
 .drink-card .img-container{
     width:75%;
     margin:10px auto;
-    border:  rgb(86,52,42) 2px solid;
+    border:  rgb(215,186,137) 2px solid;
     border-radius: 50%;
     overflow:hidden;
 }
 
 .img-drink{
-    width:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 
 .img-icon{
-    fill: rgb(86,52,42);
+    fill: rgb(215,186,137);
     width:30px;
     position: absolute;
     right:0px;
     top:5px;
 }
 
+.img-icon:hover{
+    fill: black;
+}
+
  .popup{
     position: absolute;
+    color:rgb(86,52,42);
     background-color: rgb(215,186,137);
     border: rgb(86,52,42) 3px solid;
     border-radius: 5px;
@@ -78,5 +114,45 @@ body{
     margin: 5px 1px;  
 
  }
+
+ nav a{
+    all:unset;
+    display: block;
+ }
+
+nav{
+    width: 100%;
+    height:40px;
+    background-color: rgb(86,52,42);
+    border-bottom: rgb(215,186,137) solid 1px;
+}
+
+ nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-left:100px;
+    height: 100%;
+    width:400px;
+
+}
+
+
+ nav ul li{
+    font-weight: bold;
+    list-style-type: none;
+    width: 100%;
+    padding:10px 20px;
+    /* border-right: 1px solid rgb(215,186,137); */
+    text-align: center;
+ }
+
+ nav ul li:hover{
+    color:black;
+ }
+
+
 
 
