@@ -9,6 +9,7 @@ const DrinkCard = ({ drinks }) => {
   const [recipePopUp, setRecipePopUp] = useState(false)
 
   const handlePopUp = () => {
+    console.log("Made it In Popup Func")
     setRecipePopUp(true)
   }
 
