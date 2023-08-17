@@ -4,10 +4,12 @@ const RecipePopUp = ({ drinks, setRecipePopUp}) => {
 
     const i = 1;
 
+
+    //This componenet lists out all the incgredients for each drink individually
     return (
         <>
             <div className='popup'>
-                <div onClick={(e) =>  drinks.idDrink == "11007" ? setRecipePopUp(false) : console.log("NO")}><strong>X</strong></div>
+                <div onClick={(e) =>  setRecipePopUp(false)}><strong>X</strong></div>
                 <div className='ingredients-container'>
                     <div className='mix-container'>
                         <h4>Ingredients:</h4>

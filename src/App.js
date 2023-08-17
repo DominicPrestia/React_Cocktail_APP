@@ -13,78 +13,54 @@ import axios from "axios";
 
 function App() {
 
-  const [drink, setDrink] = useState([])
-  const [letter, setLetter] = useState(['a', 'b', 'c'])
+  const [drink, setDrink] = useState()
+  const [storedDrinks,setStoredDrinks] = useState()
 
-
-
+  //I don't know how to handle a null value that is returned to a promise. 
+  //When iterating through url requests. I've left out U and X because I believe
+  //they are returning null and causing this error: 
+    //drink is not iterable (cannot read property null)
+    //TypeError: drink is not iterable (cannot read property null)
+    //at http://localhost:3000/main.97366a59d4783f16d0d1.hot-update.js:72:23
+  const [letter, setLetter] = useState(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'v', 'w', 'y', 'z'])
 
 
   const getDrink = async () => {
 
-    // const awaitJson = (response) => Promise.all(responses.map(response => {
-    //   if(response.ok) return response.json();
-    //   throw new Error(response.statusText);
-    // }));
-
     try {
 
+      const promises = []
+      const drinklist = []
 
-      const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a`)
+      for (const e of letter) {
 
-      const data = await response.json()
-      // const data = await promises.json()
-      console.log("What's my data", data)
-      setDrink(data)
+        promises.push(fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${e}`))
+
+      }
+
+      //This is handling the promise array and processing the promises received.
+      //At the end I am setDrink to the destructured array drinklist
+      Promise.all(promises).then((values) => {
+        var responses = values.map((e) => { return e.json(); });
+        Promise.all(responses).then((jsonresponses) => {
+          let drinks = jsonresponses.map((e) => { return e.drinks });
+          for (const drink of drinks) {
+            drinklist.push(...drink)
+          }
+          setDrink(drinklist)
+          setStoredDrinks(drinklist)
+        })
+      })
+
     }
     catch (error) {
       console.error(error)
     }
   }
-      // for (const e of letter) {
 
-      //   responses.push(await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${e}`))
-      //     console.log("My Promise: ", responses)
-
-      // }
-
-      // const response = Promise.resolve(promises)
-
-      // console.log("New Response: ", response)
-
-      // const data = await Promise.all(responses).then(awaitJson).then((data) => {
-      //   fetch(`https://www.thecocktaildb.com/api.php`)
-      //   .then(response => {
-      //     if(response.ok) return response.json();
-      //     throw new Error(response.statusText);
-      //   })
-      // })
-        
-
-        // const response = await Promise.all(
-        //   letter.map(async letters => {
-        //     const res = await fetch(
-        //       `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letters}`
-        //     )
-        //     return res;
-        //   })
-        // )
-
-        // response.then(value =>{console.log("Values in response: ", values)})
-
-
-
-        // promises.push(response);
-      // }
-
-      // console.log("Promise is: ", promises)
-      // Promise.all(promises).then((values) =>{
-      //   console.log("Promise Values are: ",values);
-      // })
-      //   const response =  promises;
-
-
-
+  const replaceListAll = () =>{
+    setDrink(storedDrinks)
+  }
 
   useEffect(() => {
     getDrink()
@@ -92,42 +68,24 @@ function App() {
 
   return (
     <>
-
-
       <div className="app-class">
-
         <video className="background" src={videoBG} autoPlay loop muted></video>
-
-
-
         <nav>
           <ul>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/menu'>Menu</Link></li>
-            <li><Link to='/search'>Search</Link></li>
+            <li><Link onClick={replaceListAll} to='/menu'>Menu</Link></li>
+            <li><Link to='/search'>Search Alphabetically</Link></li>
           </ul>
         </nav>
 
-        <h1>Welcome to the Lounge</h1>
-        <p>Please feel free to look through our wide variety of cocktails</p>
+      
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/search' element={<Search />} />
-          <Route path='/menu' element={<Menu drink={drink} />} />
+          <Route path='/search' element={<Search drink={drink} setLetter={setLetter} setDrink={setDrink} />} />
+          <Route path='/menu' element={<Menu drink={drink}/>} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
-
-        {/* <div className="menu-view">
-          <Routes>
-            <Route path='/menu' element={
-              drink.drinks?.map(drink =>
-                <DrinkCard
-                  drinks={drink}
-                />)}
-            />
-          </Routes>
-        </div> */}
 
       </div>
     </>
