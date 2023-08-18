@@ -69,7 +69,7 @@ const SearchAlpha = () => {
         })}
       </div>
 
-      <h1>Drinks Starting with: {alphabet}</h1>
+      {/* <h1>Drinks Starting with: {alphabet}</h1> */}
       <Menu />
     </>
   );

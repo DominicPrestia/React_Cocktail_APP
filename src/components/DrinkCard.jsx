@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import RecipePopUp from "./RecipePopUp";
 import { useState } from "react";
 import { CocktailContext } from "../App";
+import '../styles/DrinkCard.css'
 
 const DrinkCard = ({ drink }) => {
   const [drinks, setDrinks, selectedDrink, setSelectedDrink] =
