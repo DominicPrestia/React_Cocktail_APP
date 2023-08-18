@@ -1,185 +1,181 @@
-body{
-    display: flex;
-    justify-content: center;
-    height:100vw;
-    background-color: black;
-    color: rgb(86,52,42);
-    font-family: Arial,sans-serif;
-    margin:0;
-    padding:0;
-    overflow: hidden;
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vw;
+  background-color: black;
+  color: rgb(86, 52, 42);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.app-class{
-    color:rgb(215,186,137);
-    text-align: center;
-    width: 100vw;
-    margin-top:0;
+.app-class {
+  color: rgb(215, 186, 137);
+  text-align: center;
+  width: 100vw;
+  margin-top: 0;
 }
 
-.background{
-    color: black;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    height: 100vh;
-    z-index: -100;
+.background {
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  height: 100vh;
+  z-index: -100;
 }
 
-
-.menu-view::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+.menu-view::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 /* .top-test{
     margin: 10px;
 } */
 
-.menu-view{
-    display: flex;
-    /* background-color: rgb(152,107,65); */
-    overflow: hidden;
-    overflow-y: scroll;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    height: 80vh;
-    min-width: 400px;
-    flex-wrap: wrap;
+.menu-view {
+  display: flex;
+  /* background-color: rgb(152,107,65); */
+  overflow: hidden;
+  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 80vh;
+  min-width: 400px;
+  flex-wrap: wrap;
 }
 
-.drink-card{
-    position:relative;
-    color: rgb(215,186,137);
-    width:360px;
-    background-color:  rgb(86,52,42);
-    border: rgb(182,142,101) 2px solid;
-    border-radius: 2%;
-    margin:10px 10px;
-    text-align: center;
+.drink-card {
+  position: relative;
+  color: rgb(215, 186, 137);
+  width: 360px;
+  background-color: rgb(86, 52, 42);
+  border: rgb(182, 142, 101) 2px solid;
+  border-radius: 2%;
+  margin: 10px 10px;
+  text-align: center;
 }
-.drink-card .img-container{
-    width:75%;
-    margin:10px auto;
-    border:  rgb(215,186,137) 2px solid;
-    border-radius: 50%;
-    overflow:hidden;
-}
-
-.img-drink{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+.drink-card .img-container {
+  width: 75%;
+  margin: 10px auto;
+  border: rgb(215, 186, 137) 2px solid;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-
-.img-icon{
-    fill: rgb(215,186,137);
-    width:30px;
-    position: absolute;
-    right:0px;
-    top:5px;
+.img-drink {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
-.img-icon:hover{
-    fill: black;
+.img-icon {
+  fill: rgb(215, 186, 137);
+  width: 30px;
+  position: absolute;
+  right: 0px;
+  top: 5px;
 }
 
- .popup{
-    position: absolute;
-    color:rgb(86,52,42);
-    background-color: rgb(215,186,137);
-    border: rgb(86,52,42) 3px solid;
-    border-radius: 5px;
-    width: 80%;
-    height:80%;
-    top:40px;
-    right: 10px;
-    margin:0 10px;
-    padding: 10px;
-    text-align: left;
- }
- .ingredients-container{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center; 
-
- }
-
- .mix-container{
-    width: 100%;
-    margin: 5px 1px;  
-
- }
-
- nav a{
-    all:unset;
-    display: block;
- }
-
-nav{
-    width: 100%;
-    height:40px;
-    background-color: rgb(86,52,42);
-    border-bottom: rgb(215,186,137) solid 1px;
+.img-icon:hover {
+  fill: black;
 }
 
- nav ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    margin-left:100px;
-    height: 100%;
-    width:400px;
-
+.popup {
+  position: absolute;
+  color: rgb(86, 52, 42);
+  background-color: rgb(215, 186, 137);
+  border: rgb(86, 52, 42) 3px solid;
+  border-radius: 5px;
+  width: 80%;
+  height: 80%;
+  top: 40px;
+  right: 10px;
+  margin: 0 10px;
+  padding: 10px;
+  text-align: left;
+}
+.ingredients-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-
- nav ul li{
-    font-weight: bold;
-    list-style-type: none;
-    width: 100%;
-    padding:10px 20px;
-    /* border-right: 1px solid rgb(215,186,137); */
-    text-align: center;
- }
-
- nav ul li:hover{
-    color:black;
- }
-
- .button-master{
-    display: flex;
-    justify-content: center;
- }
-
- .button-master button{
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgb(86,52,42);
-    color: rgb(215,186,137);
-    border: 1px solid rgb(215,186,137);
-    margin:5px 5px;
-}
-.button-master button:hover{
-    background-color: rgb(215,186,137);
-    color: rgb(86,52,42);
-    border: 1px solid rgb(86,52,42);
+.mix-container {
+  width: 100%;
+  margin: 5px 1px;
 }
 
-.welcome-message{
-    position: relative;
-    top: 20vh;
-    left: 10%;
-    width: 400px;
+nav a {
+  all: unset;
+  display: block;
 }
 
+nav {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(86, 52, 42);
+  border-bottom: rgb(215, 186, 137) solid 1px;
+}
 
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-left: 100px;
+  height: 100%;
+  width: 400px;
+}
 
+nav ul li {
+  font-weight: bold;
+  list-style-type: none;
+  width: 100%;
+  padding: 10px 20px;
+  /* border-right: 1px solid rgb(215,186,137); */
+  text-align: center;
+}
 
+nav ul li:hover {
+  color: black;
+}
 
+.button-master {
+  display: flex;
+  justify-content: center;
+}
+
+.button-master button {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(86, 52, 42);
+  color: rgb(215, 186, 137);
+  border: 1px solid rgb(215, 186, 137);
+  margin: 5px 5px;
+}
+.button-master button:hover {
+  background-color: rgb(215, 186, 137);
+  color: rgb(86, 52, 42);
+  border: 1px solid rgb(86, 52, 42);
+}
+
+.welcome-message {
+  position: relative;
+  top: 20vh;
+  left: 10%;
+  width: 400px;
+}
+
+.card {
+  background-color: beige;
+}
+.img-hero {
+  width: 200px;
+}

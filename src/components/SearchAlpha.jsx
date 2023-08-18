@@ -7,7 +7,8 @@ import { CocktailContext } from "../App";
 const SearchAlpha = () => {
   const [alphabet, setAlphabet] = useState("a");
   const [buttonText, setButtonText] = useState("A");
-  const [drinks, setDrinks] = useContext(CocktailContext);
+  const [drinks, setDrinks, selectedDrink, setSelectedDrink] =
+    useContext(CocktailContext);
   const [letters, setLetters] = useState([
     "a",
     "b",
@@ -35,6 +36,10 @@ const SearchAlpha = () => {
     "z",
   ]);
 
+  useEffect(() => {
+    setSelectedDrink(null);
+  }, []);
+
   const handleAlphaSearch = (e) => {
     setAlphabet(e);
   };
@@ -54,6 +59,7 @@ const SearchAlpha = () => {
         {letters.map((letter) => {
           return (
             <button
+              key={`alpha-search-${letter}`}
               type="button"
               onClick={(e) => handleAlphaSearch(e.target.innerHTML)}
             >

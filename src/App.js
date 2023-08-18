@@ -5,6 +5,7 @@ import "./styles/index.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import SearchAlpha from "./components/SearchAlpha";
+import SearchName from "./components/SearchName";
 import PageNotFound from "./components/PageNotFound";
 import Menu from "./components/Menu";
 import videoBG from "./videos/bar_banner_vid.mp4";
@@ -14,22 +15,11 @@ export const CocktailContext = createContext();
 
 function App() {
   const [drinks, setDrinks] = useState();
-  const [storedDrinks, setStoredDrinks] = useState();
-
-  //I don't know how to handle a null value that is returned to a promise.
-  //When iterating through url requests. I've left out U and X because I believe
-  //they are returning null and causing this error:
-  //drink is not iterable (cannot read property null)
-  //TypeError: drink is not iterable (cannot read property null)
-  //at http://localhost:3000/main.97366a59d4783f16d0d1.hot-update.js:72:23
-
-  const replaceListAll = () => {
-    setDrinks(storedDrinks);
-  };
+  const [selectedDrink, setSelectedDrink] = useState();
 
   return (
     <CocktailContext.Provider
-      value={[drinks, setDrinks, storedDrinks, setStoredDrinks]}
+      value={[drinks, setDrinks, selectedDrink, setSelectedDrink]}
     >
       <div className="app-class">
         <video className="background" src={videoBG} autoPlay loop muted></video>
@@ -39,20 +29,22 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link onClick={replaceListAll} to="/menu">
-                Menu
-              </Link>
+              <Link to="/menu">Menu</Link>
             </li>
             <li>
               <Link to="/searchAlpha">Search Alphabetically</Link>
             </li>
+            {/* <li>
+              <Link to="/searchName">Name Search</Link>
+            </li> */}
           </ul>
         </nav>
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/search" element={<SearchAlpha />} />
-          <Route path="/menu" element={<Menu drink={drinks} />} />
+          <Route path="/searchAlpha" element={<SearchAlpha />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/searchName" element={<SearchName />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

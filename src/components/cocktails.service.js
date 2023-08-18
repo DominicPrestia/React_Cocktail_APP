@@ -19,7 +19,9 @@ const getCocktailById = async (id) => {
 
 const getCocktailsByName = async (name) => {
   try {
-    const res = await api.get(`api/json/v1/1/search.php?s=${name}`);
+    const res = await api.get(
+      `https://www.thecocktaildb.com/browse.php?s=${name}`
+    );
     return sanitizeResults(res.data.drinks);
   } catch (err) {
     console.log(err);
@@ -44,6 +46,15 @@ const getCocktailsByIngredient = async (ingredient) => {
   }
 };
 
+const getRandomCocktail = async () => {
+  try {
+    const res = await api.get(`api/json/v1/1/random.php`);
+    return sanitizeResults(res.data.drinks);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const sanitizeResults = (drinks) => {
   if (!drinks) return drinks;
   let sanitizedResults = [];
@@ -53,7 +64,7 @@ const sanitizeResults = (drinks) => {
     newDrink.name = drink.strDrink;
     newDrink.ingredients = [];
     newDrink.imageSrc = drink.strDrinkThumb;
-    newDrink.instructions = drink.strInstructionsES;
+    newDrink.instructions = drink.strInstructions;
     Object.keys(drink).map((key) => {
       if (key.includes("strIngredient")) {
         const ingredient = {};
@@ -77,5 +88,5 @@ export {
   getCocktailsByName,
   getCocktailsByFirstLeter,
   getCocktailsByIngredient,
-  sanitizeResults,
+  getRandomCocktail,
 };
