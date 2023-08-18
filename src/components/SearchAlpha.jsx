@@ -24,6 +24,7 @@ const SearchAlpha = () => {
       setDrinks(data);
     };
     fetchDrinks();
+    setSelectedDrink(null);
   }, [alphabet]);
 
   return (
