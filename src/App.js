@@ -60,9 +60,9 @@ function App() {
             <li>
               <Link to="/searchAlpha">Search Alphabetically</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/searchName">Name Search</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
