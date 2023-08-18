@@ -1,6 +1,6 @@
 import React from "react";
 
-const RecipePopUp = ({ drinks, setRecipePopUp }) => {
+const RecipePopUp = ({ drink, setRecipePopUp }) => {
   const i = 1;
 
   //This componenet lists out all the incgredients for each drink individually
@@ -14,102 +14,102 @@ const RecipePopUp = ({ drinks, setRecipePopUp }) => {
           <div className="mix-container">
             <h4>Ingredients:</h4>
             <ul>
-              {console.log(drinks?.strIngredient1)}
-              {drinks?.strIngredient1 !== null ? (
-                <li>{drinks?.strIngredient1}</li>
+              {console.log(drink?.strIngredient1)}
+              {drink?.strIngredient1 !== null ? (
+                <li>{drink?.strIngredient1}</li>
               ) : null}
-              {drinks?.strIngredient2 !== null ? (
-                <li>{drinks?.strIngredient2}</li>
+              {drink?.strIngredient2 !== null ? (
+                <li>{drink?.strIngredient2}</li>
               ) : null}
-              {drinks?.strIngredient3 !== null ? (
-                <li>{drinks?.strIngredient3}</li>
+              {drink?.strIngredient3 !== null ? (
+                <li>{drink?.strIngredient3}</li>
               ) : null}
-              {drinks?.strIngredient4 !== null ? (
-                <li>{drinks?.strIngredient4}</li>
+              {drink?.strIngredient4 !== null ? (
+                <li>{drink?.strIngredient4}</li>
               ) : null}
-              {drinks?.strIngredient5 !== null ? (
-                <li>{drinks?.strIngredient5}</li>
+              {drink?.strIngredient5 !== null ? (
+                <li>{drink?.strIngredient5}</li>
               ) : null}
-              {drinks?.strIngredient6 !== null ? (
-                <li>{drinks?.strIngredient6}</li>
+              {drink?.strIngredient6 !== null ? (
+                <li>{drink?.strIngredient6}</li>
               ) : null}
-              {drinks?.strIngredient7 !== null ? (
-                <li>{drinks?.strIngredient7}</li>
+              {drink?.strIngredient7 !== null ? (
+                <li>{drink?.strIngredient7}</li>
               ) : null}
-              {drinks?.strIngredient8 !== null ? (
-                <li>{drinks?.strIngredient8}</li>
+              {drink?.strIngredient8 !== null ? (
+                <li>{drink?.strIngredient8}</li>
               ) : null}
-              {drinks?.strIngredient9 !== null ? (
-                <li>{drinks?.strIngredient9}</li>
+              {drink?.strIngredient9 !== null ? (
+                <li>{drink?.strIngredient9}</li>
               ) : null}
-              {drinks?.strIngredient10 !== null ? (
-                <li>{drinks?.strIngredient10}</li>
+              {drink?.strIngredient10 !== null ? (
+                <li>{drink?.strIngredient10}</li>
               ) : null}
-              {drinks?.strIngredient11 !== null ? (
-                <li>{drinks?.strIngredient11}</li>
+              {drink?.strIngredient11 !== null ? (
+                <li>{drink?.strIngredient11}</li>
               ) : null}
-              {drinks?.strIngredient12 !== null ? (
-                <li>{drinks?.strIngredient12}</li>
+              {drink?.strIngredient12 !== null ? (
+                <li>{drink?.strIngredient12}</li>
               ) : null}
-              {drinks?.strIngredient13 !== null ? (
-                <li>{drinks?.strIngredient13}</li>
+              {drink?.strIngredient13 !== null ? (
+                <li>{drink?.strIngredient13}</li>
               ) : null}
-              {drinks?.strIngredient14 !== null ? (
-                <li>{drinks?.strIngredient14}</li>
+              {drink?.strIngredient14 !== null ? (
+                <li>{drink?.strIngredient14}</li>
               ) : null}
-              {drinks?.strIngredient15 !== null ? (
-                <li>{drinks?.strIngredient15}</li>
+              {drink?.strIngredient15 !== null ? (
+                <li>{drink?.strIngredient15}</li>
               ) : null}
             </ul>
           </div>
           <div className="mix-container">
             <h4>Measures:</h4>
             <ul>
-              {console.log(drinks?.strIngredient1)}
-              {drinks?.strMeasure1 !== null ? (
-                <li>{drinks?.strMeasure1}</li>
+              {console.log(drink?.strIngredient1)}
+              {drink?.strMeasure1 !== null ? (
+                <li>{drink?.strMeasure1}</li>
               ) : null}
-              {drinks?.strMeasure2 !== null ? (
-                <li>{drinks?.strMeasure2}</li>
+              {drink?.strMeasure2 !== null ? (
+                <li>{drink?.strMeasure2}</li>
               ) : null}
-              {drinks?.strMeasure3 !== null ? (
-                <li>{drinks?.strMeasure3}</li>
+              {drink?.strMeasure3 !== null ? (
+                <li>{drink?.strMeasure3}</li>
               ) : null}
-              {drinks?.strMeasure4 !== null ? (
-                <li>{drinks?.strMeasure4}</li>
+              {drink?.strMeasure4 !== null ? (
+                <li>{drink?.strMeasure4}</li>
               ) : null}
-              {drinks?.strMeasure5 !== null ? (
-                <li>{drinks?.strMeasure5}</li>
+              {drink?.strMeasure5 !== null ? (
+                <li>{drink?.strMeasure5}</li>
               ) : null}
-              {drinks?.strMeasure6 !== null ? (
-                <li>{drinks?.strMeasure6}</li>
+              {drink?.strMeasure6 !== null ? (
+                <li>{drink?.strMeasure6}</li>
               ) : null}
-              {drinks?.strMeasure7 !== null ? (
-                <li>{drinks?.strMeasure7}</li>
+              {drink?.strMeasure7 !== null ? (
+                <li>{drink?.strMeasure7}</li>
               ) : null}
-              {drinks?.strMeasure8 !== null ? (
-                <li>{drinks?.strMeasure8}</li>
+              {drink?.strMeasure8 !== null ? (
+                <li>{drink?.strMeasure8}</li>
               ) : null}
-              {drinks?.strMeasure9 !== null ? (
-                <li>{drinks?.strMeasure9}</li>
+              {drink?.strMeasure9 !== null ? (
+                <li>{drink?.strMeasure9}</li>
               ) : null}
-              {drinks?.strMeasure10 !== null ? (
-                <li>{drinks?.strMeasure10}</li>
+              {drink?.strMeasure10 !== null ? (
+                <li>{drink?.strMeasure10}</li>
               ) : null}
-              {drinks?.strMeasure11 !== null ? (
-                <li>{drinks?.strMeasure11}</li>
+              {drink?.strMeasure11 !== null ? (
+                <li>{drink?.strMeasure11}</li>
               ) : null}
-              {drinks?.strMeasure12 !== null ? (
-                <li>{drinks?.strMeasure12}</li>
+              {drink?.strMeasure12 !== null ? (
+                <li>{drink?.strMeasure12}</li>
               ) : null}
-              {drinks?.strMeasure13 !== null ? (
-                <li>{drinks?.strMeasure13}</li>
+              {drink?.strMeasure13 !== null ? (
+                <li>{drink?.strMeasure13}</li>
               ) : null}
-              {drinks?.strMeasure14 !== null ? (
-                <li>{drinks?.strMeasure14}</li>
+              {drink?.strMeasure14 !== null ? (
+                <li>{drink?.strMeasure14}</li>
               ) : null}
-              {drinks?.strMeasure15 !== null ? (
-                <li>{drinks?.strMeasure15}</li>
+              {drink?.strMeasure15 !== null ? (
+                <li>{drink?.strMeasure15}</li>
               ) : null}
             </ul>
           </div>

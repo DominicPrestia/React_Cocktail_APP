@@ -6,29 +6,47 @@ const api = axios.create({
   baseURL: url,
 });
 
-const getCocktailList = async () => {
-  try {
-    const response = await api.get("/");
-    return response.data;
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-const getCocktailData = (id) => {
+const getCocktailById = async (id) => {
   api
     .get(`api/json/v1/1/lookup.php?i=${id}`)
     .then((res) => {
-      return processResults(res.data.drinks);
+      return sanitizeResults(res.data.drinks);
     })
     .catch((err) => {
       console.log(err);
     });
 };
 
-const processResults = (drinks) => {
+const getCocktailByName = async (name) => {
+  try {
+    const res = await api.get(`api/json/v1/1/search.php?s=${name}`);
+    return sanitizeResults(res.data.drinks);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const getCocktailsByFirstLeter = async (letter) => {
+  try {
+    const res = await api.get(`api/json/v1/1/search.php?f=${letter}`);
+    return sanitizeResults(res.data.drinks);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getCocktailsByIngredient = async (ingredient) => {
+  try {
+    const res = await api.get(`api/json/v1/1/filter.php?i=${ingredient}`);
+    return sanitizeResults(res.data.drinks);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const sanitizeResults = (drinks) => {
   if (!drinks) return drinks;
-  let processedData = [];
+  let sanitizedResults = [];
   drinks.map((drink) => {
     const newDrink = {};
     newDrink.id = drink.idDrink;
@@ -49,8 +67,15 @@ const processResults = (drinks) => {
         }
       }
     });
-    processedData.push(newDrink);
+    sanitizedResults.push(newDrink);
   });
+  return sanitizedResults;
 };
 
-export { getCocktailList, getCocktailData };
+export {
+  getCocktailById,
+  getCocktailByName,
+  getCocktailsByFirstLeter,
+  getCocktailsByIngredient,
+  sanitizeResults,
+};
