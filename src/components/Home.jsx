@@ -12,8 +12,10 @@ const Home = () => {
   return (
     <>
       <div className="welcome-message">
-        <h1>Welcome to the Lounge</h1>
-        <p>Please feel free to look through our wide variety of cocktails</p>
+        <h1 className="home">
+          Welcome to the <br /> <span className="lounge">Lounge</span>
+        </h1>
+        <p className="hm">Explore our diverse cocktail selection</p>
       </div>
     </>
   );
