@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
-import DrinkCard from "./DrinkCard";
-import axios from "axios";
 import { useEffect } from "react";
 import Menu from "./Menu";
 import { getCocktailsByFirstLeter } from "./cocktails.service";
 import { CocktailContext } from "../App";
 
-const Search = () => {
+const SearchAlpha = () => {
   const [alphabet, setAlphabet] = useState("a");
   const [buttonText, setButtonText] = useState("A");
   const [drinks, setDrinks] = useContext(CocktailContext);
@@ -36,9 +34,6 @@ const Search = () => {
     "y",
     "z",
   ]);
-  const alphabetURL = axios.create({
-    baseURL: `https://www.thecocktaildb.com/`,
-  });
 
   const handleAlphaSearch = (e) => {
     setAlphabet(e);
@@ -74,4 +69,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchAlpha;

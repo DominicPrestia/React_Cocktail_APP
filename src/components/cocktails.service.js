@@ -17,7 +17,7 @@ const getCocktailById = async (id) => {
     });
 };
 
-const getCocktailByName = async (name) => {
+const getCocktailsByName = async (name) => {
   try {
     const res = await api.get(`api/json/v1/1/search.php?s=${name}`);
     return sanitizeResults(res.data.drinks);
@@ -74,7 +74,7 @@ const sanitizeResults = (drinks) => {
 
 export {
   getCocktailById,
-  getCocktailByName,
+  getCocktailsByName,
   getCocktailsByFirstLeter,
   getCocktailsByIngredient,
   sanitizeResults,
