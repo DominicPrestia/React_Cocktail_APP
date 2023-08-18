@@ -19,9 +19,7 @@ const getCocktailById = async (id) => {
 
 const getCocktailsByName = async (name) => {
   try {
-    const res = await api.get(
-      `https://www.thecocktaildb.com/browse.php?s=${name}`
-    );
+    const res = await api.get(`api/json/v1/1/search.php?s=${name}`);
     return sanitizeResults(res.data.drinks);
   } catch (err) {
     console.log(err);
