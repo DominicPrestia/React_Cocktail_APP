@@ -53,6 +53,20 @@ const getRandomCocktail = async () => {
   }
 };
 
+const getAllCocktails = async (letters) => {
+  try {
+    const promises = [];
+
+    letters.map((letter) => {
+      promises.push(api.get(`api/json/v1/1/search.php?f=${letter}`));
+    });
+
+    return promises;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const sanitizeResults = (drinks) => {
   if (!drinks) return drinks;
   let sanitizedResults = [];
@@ -87,4 +101,6 @@ export {
   getCocktailsByFirstLeter,
   getCocktailsByIngredient,
   getRandomCocktail,
+  getAllCocktails,
+  sanitizeResults,
 };

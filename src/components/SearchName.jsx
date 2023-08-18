@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useEffect } from "react";
-import Menu from "./Menu";
+import SearchResults from "./SearchResults";
 import { getCocktailsByName } from "./cocktails.service";
 import { CocktailContext } from "../App";
 
@@ -27,7 +27,7 @@ const SearchName = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <Menu />
+      <SearchResults />
     </>
   );
 };

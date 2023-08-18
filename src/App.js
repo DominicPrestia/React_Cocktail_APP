@@ -7,19 +7,45 @@ import Home from "./components/Home";
 import SearchAlpha from "./components/SearchAlpha";
 import SearchName from "./components/SearchName";
 import PageNotFound from "./components/PageNotFound";
-import Menu from "./components/Menu";
+import SearchResults from "./components/SearchResults";
 import videoBG from "./videos/bar_banner_vid.mp4";
 import axios from "axios";
+import Menu from "./components/Menu";
 
 export const CocktailContext = createContext();
 
 function App() {
   const [drinks, setDrinks] = useState();
   const [selectedDrink, setSelectedDrink] = useState();
-
+  const [letters, setLetters] = useState([
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "y",
+    "z",
+  ]);
   return (
     <CocktailContext.Provider
-      value={[drinks, setDrinks, selectedDrink, setSelectedDrink]}
+      value={[drinks, setDrinks, selectedDrink, setSelectedDrink, letters]}
     >
       <div className="app-class">
         <video className="background" src={videoBG} autoPlay loop muted></video>

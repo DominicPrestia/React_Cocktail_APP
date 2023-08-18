@@ -1,40 +1,14 @@
 import React, { useContext, useState } from "react";
 import { useEffect } from "react";
-import Menu from "./Menu";
+import SearchResults from "./SearchResults";
 import { getCocktailsByFirstLeter } from "./cocktails.service";
 import { CocktailContext } from "../App";
 
 const SearchAlpha = () => {
   const [alphabet, setAlphabet] = useState("a");
   const [buttonText, setButtonText] = useState("A");
-  const [drinks, setDrinks, selectedDrink, setSelectedDrink] =
+  const [drinks, setDrinks, selectedDrink, setSelectedDrink, letters] =
     useContext(CocktailContext);
-  const [letters, setLetters] = useState([
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "v",
-    "w",
-    "y",
-    "z",
-  ]);
 
   useEffect(() => {
     setSelectedDrink(null);
@@ -70,7 +44,7 @@ const SearchAlpha = () => {
       </div>
 
       {/* <h1>Drinks Starting with: {alphabet}</h1> */}
-      <Menu />
+      <SearchResults />
     </>
   );
 };
